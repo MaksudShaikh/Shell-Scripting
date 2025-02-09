@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Prompt user for the source directory
+echo "Enter the source directory path to backup files from: "
+read source_dir
+
+# Prompt user for the destination directory
+echo "Enter the destination directory path for the backup: "
+read dest_dir
+
+# Get the current date and time to append to the backup folder
+timestamp=$(date +"%Y%m%d%H%M%S")
+
+# Create a backup folder in the destination directory
+backup_dir="$dest_dir/backup_$timestamp"
+mkdir -p "$backup_dir"
+
+# Copy files from the source directory to the backup folder
+cp -r "$source_dir"/* "$backup_dir"
+
+# Display a message about the backup
+echo "Backup completed successfully!"
+echo "Files from '$source_dir' have been backed up to '$backup_dir'."
