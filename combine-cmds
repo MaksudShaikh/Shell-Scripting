@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Hello, this is my first shell script!"
+mkdir my_folder
+cd my_folder
+touch file1.txt file2.txt
+echo "Files created successfully!"
