@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+# Ask the user for the number of terms in the Fibonacci series
+print "Enter the number of terms: ";
+my $n = <STDIN>;
+chomp($n);
+
+# First two terms of the Fibonacci series
+my $a = 0;
+my $b = 1;
+
+# Print the Fibonacci series
+print "Fibonacci series for $n terms: \n";
+
+for (my $i = 1; $i <= $n; $i++) {
+    print "$a\n";
+    # Calculate the next term
+    my $next = $a + $b;
+    $a = $b;
+    $b = $next;
+}
